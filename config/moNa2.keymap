@@ -46,14 +46,16 @@
         conbt0: conbt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&btdisc &bt BT_SEL 0>;
+            bindings = <&btdisc>, <&macro_wait_time 5>, <&bt BT_SEL 0>;
+
             label = "CONBT0";
         };
 
         conbt1: conbt1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&btdisc &bt BT_SEL 1>;
+            bindings = <&btdisc>, <&macro_wait_time 5>, <&bt BT_SEL 1>;
+
             label = "CONBT1";
         };
 
