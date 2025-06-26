@@ -12,7 +12,14 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        capture {
+            bindings = <&capture>;
+            key-positions = <34 22 12>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -20,6 +27,13 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        capture: capture {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
+            label = "CAPTURE";
         };
     };
 
@@ -47,9 +61,9 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W   &kp E   &kp R      &kp T                                      &kp Y      &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S   &kp D   &kp F      &kp G      &trans           &kp RA(GRAVE)  &kp H      &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X   &kp C   &kp V      &kp B      &mo 6            &mo 5          &kp N      &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp Q             &kp W   &kp E   &kp R      &kp T                                      &kp Y      &kp U  &kp I     &kp O     &kp P
+&kp A             &kp S   &kp D   &kp F      &kp G      &trans           &kp RA(GRAVE)  &kp H      &kp J  &kp K     &kp UP    &kp L
+&mt LEFT_SHIFT Z  &kp X   &kp C   &kp V      &kp B      &mo 6            &mo 5          &kp N      &kp M  &kp LEFT  &kp DOWN  &kp RIGHT
 &trans            &trans  &trans  &kp LCTRL  &kp SPACE  &kp BACKSPACE    &kp DEL        &kp ENTER                             &kp MINUS
             >;
 
