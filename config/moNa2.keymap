@@ -35,6 +35,48 @@
             bindings = <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
             label = "CAPTURE";
         };
+
+        btdisc: btdisc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4>;
+            label = "BTDISC";
+        };
+
+        conbt0: conbt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&btdisc &bt BT_SEL 0>;
+            label = "CONBT0";
+        };
+
+        conbt1: conbt1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&btdisc &bt BT_SEL 1>;
+            label = "CONBT1";
+        };
+
+        conbt2: conbt2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&btdisc &bt BT_SEL 2>;
+            label = "CONBT2";
+        };
+
+        conbt3: conbt3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&btdisc &bt BT_SEL 3>;
+            label = "CONBT3";
+        };
+
+        conbt4: conbt4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&btdisc &bt BT_SEL 4>;
+            label = "CONBT4";
+        };
     };
 
     behaviors {
@@ -116,10 +158,10 @@
 
         Bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans                                                  &trans
+&trans  &trans  &trans  &trans  &trans                            &conbt0  &conbt1  &conbt2  &conbt3  &conbt4
+&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_CLR_ALL  &btdisc  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans   &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans                              &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
