@@ -19,6 +19,31 @@
             bindings = <&capture>;
             key-positions = <34 22 12>;
         };
+
+        mouseleft {
+            bindings = <&mkp LCLK>;
+            key-positions = <13 18>;
+        };
+
+        mouseright {
+            bindings = <&mkp RCLK>;
+            key-positions = <13 20>;
+        };
+
+        mousemid {
+            bindings = <&mkp MCLK>;
+            key-positions = <13 19>;
+        };
+
+        mouseprev {
+            bindings = <&mkp MB4>;
+            key-positions = <13 29>;
+        };
+
+        mousenext {
+            bindings = <&mkp MB5>;
+            key-positions = <13 17>;
+        };
     };
 
     macros {
