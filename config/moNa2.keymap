@@ -61,46 +61,6 @@
 
             label = "CAPTURE";
         };
-
-        conbt0: conbt0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&macro_wait_time 5>, <&bt BT_SEL 0>;
-
-            label = "CONBT0";
-        };
-
-        conbt1: conbt1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&macro_wait_time 5>, <&bt BT_SEL 1>;
-
-            label = "CONBT1";
-        };
-
-        conbt2: conbt2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&macro_wait_time 5>, <&bt BT_SEL 2>;
-
-            label = "CONBT2";
-        };
-
-        conbt3: conbt3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&macro_wait_time 5>, <&bt BT_SEL 3>;
-
-            label = "CONBT3";
-        };
-
-        conbt4: conbt4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_CLR>, <&macro_wait_time 5>, <&bt BT_SEL 4>;
-
-            label = "CONBT4";
-        };
     };
 
     behaviors {
@@ -182,10 +142,10 @@
 
         Bluetooth {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &conbt0     &conbt1  &conbt2  &conbt3  &conbt4
-&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_CLR_ALL  &bt BT_CLR  &trans   &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans      &trans   &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans                                 &trans
+&trans  &trans  &trans  &trans  &trans                            &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans    &bt BT_CLR_ALL  &bt BT_CLR    &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans                                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
